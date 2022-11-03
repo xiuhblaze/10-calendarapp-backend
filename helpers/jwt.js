@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 const generarJWT = (uid, name) => {
 
-    console.log('generarJWT');
+    // console.log('generarJWT');
 
     return new Promise((resolve, reject) => {
         const payload = { uid, name };
@@ -19,6 +19,9 @@ const generarJWT = (uid, name) => {
     });
 };
 
+/**
+ * Otra opción que genera el JWT sin la Promise
+ */
 const generateJWT = (u_id, name) => {
     const payload = { u_id, name };
  
