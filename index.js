@@ -4,8 +4,6 @@ const { dbConnection } = require('./database/config');
 
 require('dotenv').config();
 
-// console.log(process.env);
-
 // Crear el servidor de express
 const app = express();
 
@@ -23,8 +21,7 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/auth', require('./routes/auth')); // crear, login, renew
-// Todo: crud: eventos
-
+app.use('/api/events', require('./routes/events')); // crear, read, update, delete
 
 // Escuchar peticiones
 app.listen(process.env.PORT, () => {
